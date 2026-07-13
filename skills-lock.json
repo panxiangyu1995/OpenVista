@@ -7,6 +7,30 @@
       "skillPath": "skills/find-skills/SKILL.md",
       "computedHash": "781bd6d3f9b19f8c9af6b53d8d0e4876d0183841b565db34ca7092ffa412d111"
     },
+    "openvista-learn-foreign-language": {
+      "source": "panxiangyu1995/OpenVista",
+      "sourceType": "github",
+      "skillPath": "skills/openvista-learn-foreign-language/SKILL.md",
+      "computedHash": "7fd19d115968a8c84efccff0c623088d03642d16ffde058262162b5ef13aa4eb"
+    },
+    "openvista-playwright-cli": {
+      "source": "panxiangyu1995/OpenVista",
+      "sourceType": "github",
+      "skillPath": "skills/openvista-playwright-cli/SKILL.md",
+      "computedHash": "ffa30f5a664cf48339a4e341fb39a1cf8e272081784196eac0c78310dfd1aaea"
+    },
+    "openvista-social-telegram": {
+      "source": "panxiangyu1995/OpenVista",
+      "sourceType": "github",
+      "skillPath": "skills/openvista-social-telegram/SKILL.md",
+      "computedHash": "7bd28cab819b8b22ff8bb0e041f4494ef122bd390f5d489bc4727ae753eec839"
+    },
+    "openvista-social-vk": {
+      "source": "panxiangyu1995/OpenVista",
+      "sourceType": "github",
+      "skillPath": "skills/openvista-social-vk/SKILL.md",
+      "computedHash": "43da142ad405a18b27e26e03c60736c2fb4bb5108c894869c8e0af7e6eaad37c"
+    },
     "skill-creator": {
       "source": "anthropics/skills",
       "sourceType": "github",
