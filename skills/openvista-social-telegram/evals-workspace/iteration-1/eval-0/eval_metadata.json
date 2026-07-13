@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "telegram-setup-groups",
+  "prompt": "我刚下载了Telegram，帮我设置好并加入一些有用的俄语群组",
+  "assertions": [
+    "给出了Telegram隐私设置建议",
+    "推荐了至少3个俄语群组（语言交换、兴趣、expat各1+）",
+    "说明了如何加入群组的步骤",
+    "如果有user-profile.yaml则复用，而非重新创建"
+  ]
+}

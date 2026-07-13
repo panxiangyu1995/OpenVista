@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "japanese-beginner-lost",
+  "prompt": "我想学日语，但不知道从哪里开始，你能帮我制定一个计划吗？",
+  "assertions": [
+    "Agent 用固定开场白打招呼",
+    "Agent 询问用户计划什么时候开始、学多久、每天什么时间段有空",
+    "Agent 询问当前日语水平",
+    "用户说'不知道从哪里开始'，Agent 应主动引导而非拒绝",
+    "生成了 MISSION.md 和学习计划"
+  ]
+}

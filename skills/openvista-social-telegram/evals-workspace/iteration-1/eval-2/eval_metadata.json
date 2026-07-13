@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "telegram-ai-mirror",
+  "prompt": "我在Telegram上认识了一个俄罗斯女生，我们聊了几次了，帮我做一个社交前模拟练习",
+  "assertions": [
+    "读取了已有的 user-profile.yaml",
+    "如果 Katya 档案存在则复用，不存在则创建",
+    "AI 扮演俄罗斯女性进行模拟对话",
+    "对话后给出反馈",
+    "更新了 Katya 的档案"
+  ]
+}

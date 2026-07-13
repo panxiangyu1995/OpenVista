@@ -1,0 +1,13 @@
+{
+  "eval_id": 0,
+  "eval_name": "russian-zero-to-basic",
+  "prompt": "我想学俄语，每天晚上8点到9点有空，三个月后能进行基础对话就行，我现在是零基础",
+  "assertions": [
+    "生成了 ~/.openvista/learning/MISSION.md 文件",
+    "MISSION.md 包含 Why、Success、Constraints、Out of scope 四个部分",
+    "生成了 schedule.yaml 包含第一周学习计划",
+    "生成了 lessons/0001-*.html 第一个 lesson 文件",
+    "lesson HTML 包含 TTS 朗读和 STT 录音功能",
+    "Agent 询问了用户的目标时间（每天8点到9点）"
+  ]
+}

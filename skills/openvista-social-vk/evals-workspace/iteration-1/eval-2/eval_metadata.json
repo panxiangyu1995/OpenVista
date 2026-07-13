@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "send-vk-message",
+  "prompt": "帮我用playwright-cli给vk_id=123456789的女生发一条消息，内容是'Привет! Как дела?'",
+  "assertions": [
+    "Agent 执行了 playwright-cli goto 命令",
+    "Agent 执行了点击消息按钮的操作",
+    "Agent 执行了输入消息的操作",
+    "Agent 执行了发送操作",
+    "操作后有截图确认"
+  ]
+}

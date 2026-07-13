@@ -1,0 +1,44 @@
+{
+  "skill_name": "openvista-learn-foreign-language",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我想学俄语，每天晚上8点到9点有空，三个月后能进行基础对话就行，我现在是零基础",
+      "expected_output": "Agent 应：1) 用固定开场白确认学习语言；2) 询问学习时间和目标；3) 确认零基础水平；4) 生成 MISSION.md；5) 生成第一周学习计划；6) 生成第一个 lesson HTML",
+      "files": [],
+      "expectations": [
+        "生成了 ~/.openvista/learning/MISSION.md 文件",
+        "MISSION.md 包含 Why、Success、Constraints、Out of scope 四个部分",
+        "生成了 schedule.yaml 包含第一周学习计划",
+        "生成了 lessons/0001-*.html 第一个 lesson 文件",
+        "lesson HTML 包含 TTS 朗读和 STT 录音功能",
+        "Agent 询问了用户的目标时间（每天8点到9点）"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "教我学法语，我有点基础，学了半年但进步很慢，想一年内能跟法国人无障碍聊天",
+      "expected_output": "Agent 应识别为法语学习，评估为'入门'水平，生成 MISSION.md 并规划一年内达到B2水平的学习路径",
+      "files": [],
+      "expectations": [
+        "生成了 MISSION.md，语言设为法语",
+        "目标水平设为 B2 或对应级别",
+        "schedule.yaml 包含针对入门水平的学习计划",
+        "第一课不是字母表，而是更高级的内容（如自我介绍复习）"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "我想学日语，但不知道从哪里开始，你能帮我制定一个计划吗？",
+      "expected_output": "Agent 应引导用户完成初始化流程：确认日语、询问时间和目标、评估水平、生成 MISSION.md 和学习计划",
+      "files": [],
+      "expectations": [
+        "Agent 用固定开场白打招呼",
+        "Agent 询问用户计划什么时候开始、学多久、每天什么时间段有空",
+        "Agent 询问当前日语水平",
+        "用户说'不知道从哪里开始'，Agent 应主动引导而非拒绝",
+        "生成了 MISSION.md 和学习计划"
+      ]
+    }
+  ]
+}

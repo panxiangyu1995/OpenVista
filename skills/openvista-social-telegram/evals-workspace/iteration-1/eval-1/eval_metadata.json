@@ -1,0 +1,11 @@
+{
+  "eval_id": 1,
+  "eval_name": "search-telegram-user",
+  "prompt": "帮我在Telegram上找一个叫Katya的用户，她的handle是@katya_music",
+  "assertions": [
+    "Agent 执行了 playwright-cli open Telegram Web",
+    "Agent 执行了搜索操作",
+    "Agent 导航到了 Katya 的对话页面",
+    "提供了后续操作指引（发送消息等）"
+  ]
+}

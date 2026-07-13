@@ -1,0 +1,11 @@
+{
+  "eval_id": 1,
+  "eval_name": "french-intermediate",
+  "prompt": "教我学法语，我有点基础，学了半年但进步很慢，想一年内能跟法国人无障碍聊天",
+  "assertions": [
+    "生成了 MISSION.md，语言设为法语",
+    "目标水平设为 B2 或对应级别",
+    "schedule.yaml 包含针对入门水平的学习计划",
+    "第一课不是字母表，而是更高级的内容（如自我介绍复习）"
+  ]
+}

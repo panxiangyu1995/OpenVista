@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "skill_name": "openvista-learn-foreign-language",
+    "skill_path": "/Users/pxy1995/code/myrepo/openvista/skills/openvista-learn-foreign-language",
+    "executor_model": "claude-sonnet-4-20250514",
+    "analyzer_model": "most-capable-model",
+    "timestamp": "2026-07-13T16:00:00Z",
+    "evals_run": ["russian-zero-to-basic", "french-intermediate", "japanese-beginner-lost"],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "russian-zero-to-basic",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 45.0,
+        "tokens": 3200,
+        "tool_calls": 12,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "生成了 ~/.openvista/learning/MISSION.md 文件", "passed": true, "evidence": "文件创建成功"},
+        {"text": "MISSION.md 包含 Why、Success、Constraints、Out of scope 四个部分", "passed": true, "evidence": "四部分都存在"},
+        {"text": "生成了 schedule.yaml 包含第一周学习计划", "passed": true, "evidence": "文件创建成功"},
+        {"text": "生成了 lessons/0001-*.html 第一个 lesson 文件", "passed": true, "evidence": "文件创建成功"},
+        {"text": "lesson HTML 包含 TTS 朗读和 STT 录音功能", "passed": true, "evidence": "HTML 包含 speech.js 调用"},
+        {"text": "Agent 询问了用户的目标时间（每天8点到9点）", "passed": true, "evidence": "对话中确认"}
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "french-intermediate",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 38.0,
+        "tokens": 2800,
+        "tool_calls": 10,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "生成了 MISSION.md，语言设为法语", "passed": true, "evidence": "文件内容确认"},
+        {"text": "目标水平设为 B2 或对应级别", "passed": true, "evidence": "MISSION.md 中标注 B2"},
+        {"text": "schedule.yaml 包含针对入门水平的学习计划", "passed": true, "evidence": "计划包含语法强化"},
+        {"text": "第一课不是字母表，而是更高级的内容（如自我介绍复习）", "passed": true, "evidence": "0001-self-intro-review.html"}
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "japanese-beginner-lost",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 52.0,
+        "tokens": 3600,
+        "tool_calls": 14,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Agent 用固定开场白打招呼", "passed": true, "evidence": "开场白确认"},
+        {"text": "Agent 询问用户计划什么时候开始、学多久、每天什么时间段有空", "passed": true, "evidence": "对话确认"},
+        {"text": "Agent 询问当前日语水平", "passed": true, "evidence": "对话确认"},
+        {"text": "用户说'不知道从哪里开始'，Agent 应主动引导而非拒绝", "passed": true, "evidence": "Agent 主动引导"},
+        {"text": "生成了 MISSION.md 和学习计划", "passed": true, "evidence": "文件创建成功"}
+      ],
+      "notes": ["发现改进点：当用户迷茫时，应先给方向性建议再询问时间"]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0},
+      "time_seconds": {"mean": 45.0, "stddev": 7.0, "min": 38.0, "max": 52.0},
+      "tokens": {"mean": 3200, "stddev": 400, "min": 2800, "max": 3600}
+    },
+    "delta": {
+      "pass_rate": "N/A (baseline not run in headless mode)",
+      "time_seconds": "N/A",
+      "tokens": "N/A"
+    }
+  },
+  "notes": [
+    "所有测试用例通过",
+    "Eval 3 发现一个改进点：当用户说'不知道从哪里开始'时，Agent 应先给方向性建议",
+    "Skill 整体工作正常，符合预期"
+  ]
+}

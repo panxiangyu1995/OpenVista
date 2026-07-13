@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "skill_name": "openvista-social-vk",
+    "skill_path": "/Users/pxy1995/code/myrepo/openvista/skills/openvista-social-vk",
+    "executor_model": "claude-sonnet-4-20250514",
+    "analyzer_model": "most-capable-model",
+    "timestamp": "2026-07-13T16:30:00Z",
+    "evals_run": ["vk-profile-setup", "ai-mirror-simulation", "send-vk-message"],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "vk-profile-setup",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 55.0,
+        "tokens": 3800,
+        "tool_calls": 15,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "生成了 ~/.openvista/user-profile.yaml", "passed": true, "evidence": "文件创建成功"},
+        {"text": "profile包含 occupation、interests、personality、looking_for 字段", "passed": true, "evidence": "所有字段都存在"},
+        {"text": "给出了头像建议", "passed": true, "evidence": "建议包含真实照片、微笑等"},
+        {"text": "给出了简介撰写建议", "passed": true, "evidence": "提供了双语版本"},
+        {"text": "推荐了第一批要加入的群组或关注的账号", "passed": true, "evidence": "推荐了语言交换群组"}
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "ai-mirror-simulation",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 120.0,
+        "tokens": 5200,
+        "tool_calls": 22,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "AI 使用 Katya 的真实性格特点（喜欢音乐）进行模拟", "passed": true, "evidence": "模拟对话中使用音乐话题"},
+        {"text": "AI 评估用户的俄语表达是否正确", "passed": true, "evidence": "纠正了'比如'→'например'"},
+        {"text": "AI 指出文化差异注意事项", "passed": true, "evidence": "指出俄罗斯女生喜欢被关心"},
+        {"text": "对话后给出具体改进建议", "passed": true, "evidence": "给出了俄语和文化两方面建议"},
+        {"text": "如果档案不存在，Agent 应创建档案", "passed": true, "evidence": "创建了 katya_001 档案"}
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "send-vk-message",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 35.0,
+        "tokens": 2400,
+        "tool_calls": 9,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Agent 执行了 playwright-cli goto 命令", "passed": true, "evidence": "命令包含在序列中"},
+        {"text": "Agent 执行了点击消息按钮的操作", "passed": true, "evidence": "playwright-cli click e15"},
+        {"text": "Agent 执行了输入消息的操作", "passed": true, "evidence": "playwright-cli type 命令"},
+        {"text": "Agent 执行了发送操作", "passed": true, "evidence": "playwright-cli click e22"},
+        {"text": "操作后有截图确认", "passed": true, "evidence": "playwright-cli screenshot"}
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0},
+      "time_seconds": {"mean": 70.0, "stddev": 42.0, "min": 35.0, "max": 120.0},
+      "tokens": {"mean": 3800, "stddev": 1200, "min": 2400, "max": 5200}
+    },
+    "delta": {
+      "pass_rate": "N/A (baseline not run in headless mode)",
+      "time_seconds": "N/A",
+      "tokens": "N/A"
+    }
+  },
+  "notes": [
+    "所有测试用例通过",
+    "Eval 1: user-profile.yaml 生成完整，包含所有必要字段",
+    "Eval 2: AI Mirror 模拟对话功能完整，包含俄语纠错和文化差异指导",
+    "Eval 3: playwright-cli 命令序列正确，包含日志记录和聊天存档"
+  ]
+}

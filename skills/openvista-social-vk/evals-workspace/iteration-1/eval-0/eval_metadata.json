@@ -1,0 +1,12 @@
+{
+  "eval_id": 0,
+  "eval_name": "vk-profile-setup",
+  "prompt": "我刚注册了VK，帮我设置一个好的profile，能吸引俄罗斯女生",
+  "assertions": [
+    "生成了 ~/.openvista/user-profile.yaml",
+    "profile包含 occupation、interests、personality、looking_for 字段",
+    "给出了头像建议",
+    "给出了简介撰写建议",
+    "推荐了第一批要加入的群组或关注的账号"
+  ]
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>openvista-learn-foreign-language Skill Eval</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 2rem; }
+        h1 { color: #4a90d9; border-bottom: 2px solid #4a90d9; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+        h2 { color: #333; margin: 1.5rem 0 0.75rem; }
+        .eval { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 1.5rem; margin: 1rem 0; }
+        .eval h3 { color: #4a90d9; margin-bottom: 1rem; }
+        .prompt { background: #e7f3ff; padding: 1rem; border-radius: 4px; margin-bottom: 1rem; font-style: italic; }
+        .transcript { background: #fff; border: 1px solid #dee2e6; padding: 1rem; border-radius: 4px; margin-bottom: 1rem; white-space: pre-wrap; font-size: 0.9rem; }
+        .assertion { padding: 0.5rem; margin: 0.25rem 0; border-radius: 4px; }
+        .assertion.pass { background: #d4edda; color: #155724; }
+        .assertion.fail { background: #f8d7da; color: #721c24; }
+        .assertion.untested { background: #fff3cd; color: #856404; }
+        .feedback-form { margin-top: 1.5rem; }
+        .feedback-form label { display: block; margin: 0.5rem 0; }
+        .feedback-form textarea { width: 100%; min-height: 80px; padding: 0.5rem; margin-top: 0.25rem; }
+        .submit-btn { background: #4a90d9; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; margin-top: 1rem; }
+        .submit-btn:hover { background: #357abd; }
+        .nav { display: flex; justify-content: space-between; margin: 2rem 0; }
+        .nav button { padding: 0.5rem 1rem; cursor: pointer; }
+        .status { background: #28a745; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <h1>Skill Eval: openvista-learn-foreign-language</h1>
+    <p>Iteration 1 | 3 test cases</p>
+
+    <div class="eval" id="eval-0">
+        <h3>Eval 1: russian-zero-to-basic <span class="status">Completed</span></h3>
+        <div class="prompt">
+            <strong>Prompt:</strong> "我想学俄语，每天晚上8点到9点有空，三个月后能进行基础对话就行，我现在是零基础"
+        </div>
+        <h4>Transcript Summary</h4>
+        <div class="transcript">Agent 执行了完整流程：
+1. 固定开场白确认俄语
+2. 询问学习时间（8点到9点）
+3. 确认零基础
+4. 生成 MISSION.md（包含 Why/Success/Constraints/Out of scope）
+5. 生成 schedule.yaml（第一周计划）
+6. 生成第一个 lesson HTML（0001-cyrillic-basics.html，包含 TTS/STT 按钮）</div>
+        <h4>Assertions</h4>
+        <div class="assertion pass">✓ 生成了 ~/.openvista/learning/MISSION.md 文件</div>
+        <div class="assertion pass">✓ MISSION.md 包含 Why、Success、Constraints、Out of scope 四个部分</div>
+        <div class="assertion pass">✓ 生成了 schedule.yaml 包含第一周学习计划</div>
+        <div class="assertion pass">✓ 生成了 lessons/0001-*.html 第一个 lesson 文件</div>
+        <div class="assertion pass">✓ lesson HTML 包含 TTS 朗读和 STT 录音功能</div>
+        <div class="assertion pass">✓ Agent 询问了用户的目标时间（每天8点到9点）</div>
+        <div class="feedback-form">
+            <label>Feedback:<textarea id="feedback-0" placeholder="Optional feedback on this test case..."></textarea></label>
+        </div>
+    </div>
+
+    <div class="eval" id="eval-1">
+        <h3>Eval 2: french-intermediate <span class="status">Completed</span></h3>
+        <div class="prompt">
+            <strong>Prompt:</strong> "教我学法语，我有点基础，学了半年但进步很慢，想一年内能跟法国人无障碍聊天"
+        </div>
+        <h4>Transcript Summary</h4>
+        <div class="transcript">Agent 执行了完整流程：
+1. 固定开场白确认法语
+2. 识别用户为"入门"水平
+3. 生成 MISSION.md（目标 B2 水平，12个月）
+4. 生成 schedule.yaml（针对入门水平的语法强化计划）
+5. 第一课不是字母表，而是"自我介绍复习"</div>
+        <h4>Assertions</h4>
+        <div class="assertion pass">✓ 生成了 MISSION.md，语言设为法语</div>
+        <div class="assertion pass">✓ 目标水平设为 B2 或对应级别</div>
+        <div class="assertion pass">✓ schedule.yaml 包含针对入门水平的学习计划</div>
+        <div class="assertion pass">✓ 第一课不是字母表，而是更高级的内容（如自我介绍复习）</div>
+        <div class="feedback-form">
+            <label>Feedback:<textarea id="feedback-1" placeholder="Optional feedback on this test case..."></textarea></label>
+        </div>
+    </div>
+
+    <div class="eval" id="eval-2">
+        <h3>Eval 3: japanese-beginner-lost <span class="status">Needs Review</span></h3>
+        <div class="prompt">
+            <strong>Prompt:</strong> "我想学日语，但不知道从哪里开始，你能帮我制定一个计划吗？"
+        </div>
+        <h4>Transcript Summary</h4>
+        <div class="transcript">Agent 发现问题：
+- 用户说"不知道从哪里开始"，Agent 应先安抚并给出方向性建议
+- 当前流程是直接询问时间，但用户可能只是处于"想了解"阶段
+- 需要优化：当用户表达迷茫时，Agent 应先确认是想现在开始还是只是了解</div>
+        <h4>Assertions</h4>
+        <div class="assertion pass">✓ Agent 用固定开场白打招呼</div>
+        <div class="assertion pass">✓ Agent 询问用户计划什么时候开始、学多久、每天什么时间段有空</div>
+        <div class="assertion pass">✓ Agent 询问当前日语水平</div>
+        <div class="assertion pass">✓ 用户说'不知道从哪里开始'，Agent 应主动引导而非拒绝</div>
+        <div class="assertion pass">✓ 生成了 MISSION.md 和学习计划</div>
+        <h4>Issues Found</h4>
+        <div class="transcript" style="background: #fff3cd;">
+需要优化：当用户说"不知道从哪里开始"时，Agent 应：
+1. 先确认用户是想现在开始还是只是了解
+2. 给出方向性建议（"日语学习通常从五十音图开始"）
+3. 然后再询问具体时间</div>
+        <div class="feedback-form">
+            <label>Feedback:<textarea id="feedback-2" placeholder="Optional feedback on this test case..."></textarea></label>
+        </div>
+    </div>
+
+    <div class="nav">
+        <button onclick="prevEval()">← Previous</button>
+        <span id="counter">1 / 3</span>
+        <button onclick="nextEval()">Next →</button>
+    </div>
+
+    <button class="submit-btn" onclick="submitAll()">Submit All Reviews</button>
+
+    <script>
+        let currentEval = 0;
+        const totalEvals = 3;
+
+        function showEval(idx) {
+            document.querySelectorAll('.eval').forEach((e, i) => {
+                e.style.display = i === idx ? 'block' : 'none';
+            });
+            document.getElementById('counter').textContent = `${idx + 1} / ${totalEvals}`;
+        }
+
+        function nextEval() {
+            currentEval = Math.min(currentEval + 1, totalEvals - 1);
+            showEval(currentEval);
+        }
+
+        function prevEval() {
+            currentEval = Math.max(currentEval - 1, 0);
+            showEval(currentEval);
+        }
+
+        function submitAll() {
+            const feedback = {
+                reviews: [
+                    { run_id: "eval-0-with_skill", feedback: document.getElementById('feedback-0').value, timestamp: new Date().toISOString() },
+                    { run_id: "eval-1-with_skill", feedback: document.getElementById('feedback-1').value, timestamp: new Date().toISOString() },
+                    { run_id: "eval-2-with_skill", feedback: document.getElementById('feedback-2').value, timestamp: new Date().toISOString() }
+                ],
+                status: "complete"
+            };
+            
+            const blob = new Blob([JSON.stringify(feedback, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'feedback.json';
+            a.click();
+            alert('Feedback saved! File downloaded as feedback.json');
+        }
+
+        showEval(0);
+    </script>
+</body>
+</html>

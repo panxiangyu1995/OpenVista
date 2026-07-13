@@ -1,0 +1,96 @@
+{
+  "skill_name": "openvista-social-vk",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我刚注册了VK，帮我设置一个好的profile，能吸引俄罗斯女生",
+      "expected_output": "Agent 应：1) 询问用户基本信息（工作、兴趣、想找的伴侣类型）；2) 生成 user-profile.yaml；3) 给出VK profile设置建议（头像、简介）；4) 推荐前几步行动",
+      "files": [],
+      "expectations": [
+        "生成了 ~/.openvista/user-profile.yaml",
+        "profile包含 occupation、interests、personality、looking_for 字段",
+        "给出了头像建议",
+        "给出了简介撰写建议",
+        "推荐了第一批要加入的群组或关注的账号"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "我在VK上发现了一个俄罗斯女生，叫Katya，28岁，喜欢音乐，我们聊了3次了，帮我做一个社交前模拟练习",
+      "expected_output": "Agent 应：1) 检查是否有 Katya 的档案；2) 读取 user-profile.yaml；3) AI扮演Katya的性格和说话风格与用户进行5分钟模拟对话；4) 对话后给出反馈",
+      "files": [],
+      "expectations": [
+        "AI 使用 Katya 的真实性格特点（喜欢音乐）进行模拟",
+        "AI 评估用户的俄语表达是否正确",
+        "AI 指出文化差异注意事项",
+        "对话后给出具体改进建议",
+        "如果档案不存在，Agent 应创建档案"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "帮我用playwright-cli给vk_id=123456789的女生发一条消息，内容是'Привет! Как дела?'",
+      "expected_output": "Agent 应执行playwright-cli命令序列完成消息发送",
+      "files": [],
+      "expectations": [
+        "Agent 执行了 playwright-cli goto 命令",
+        "Agent 执行了点击消息按钮的操作",
+        "Agent 执行了输入消息的操作",
+        "Agent 执行了发送操作",
+        "操作后有截图确认"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "我还没有VK账号，帮我注册一个并设置好",
+      "expected_output": "Agent 应分步引导用户完成VK注册：访问vk.com、点击注册、输入手机号验证、设置头像和简介",
+      "files": [],
+      "expectations": [
+        "引导访问 vk.com",
+        "说明注册步骤（手机号验证等）",
+        "给出头像设置建议（真实照片+微笑）",
+        "给出简介撰写建议",
+        "提醒使用虚拟号接收短信"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "我在VK上认识了一个新女生Anna，帮我把她的信息存档，以后好追踪",
+      "expected_output": "Agent 应在 ~/.openvista/social/profiles/ 下为 Anna 创建档案",
+      "files": [],
+      "expectations": [
+        "创建了 ~/.openvista/social/profiles/{vk_id}/ 目录",
+        "生成了 metadata.yaml 包含姓名、年龄、来源、兴趣标签",
+        "生成了 profile.md 人物描述文档",
+        "生成了 chat-history.md 聊天记录文件",
+        "metadata.yaml 的 first_contact 和 last_contact 设为当天日期"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "帮我写一个开场白，我想给刚认识的俄罗斯女生发第一条消息，要礼貌但不死板",
+      "expected_output": "Agent 应从消息模板库中选择或生成一个合适的开场白",
+      "files": [],
+      "expectations": [
+        "使用了开场白模板（礼貌问候或共同兴趣）",
+        "生成的俄语表达自然、地道",
+        "给出了多个选项供选择",
+        "说明了使用场景和注意事项"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "我想找20-25岁、莫斯科、喜欢音乐的俄罗斯女生，帮我搜索一下",
+      "expected_output": "Agent 应使用playwright-cli在VK上执行搜索筛选",
+      "files": [],
+      "expectations": [
+        "执行了 playwright-cli goto vk.com/search",
+        "执行了 playwright-cli snapshot 获取页面元素",
+        "填入了城市筛选条件（莫斯科）",
+        "填入了年龄范围（20-25）",
+        "执行了搜索操作",
+        "给出了筛选结果的后续操作建议"
+      ]
+    }
+  ]
+}

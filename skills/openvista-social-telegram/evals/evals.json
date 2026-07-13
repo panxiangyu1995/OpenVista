@@ -1,0 +1,116 @@
+{
+  "skill_name": "openvista-social-telegram",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我刚下载了Telegram，帮我设置好并加入一些有用的俄语群组",
+      "expected_output": "Agent 应：1) 询问用户基本信息（已有user-profile则复用）；2) 给出Telegram设置建议；3) 推荐高质量俄语群组（语言交换、兴趣群、expat群）",
+      "files": [],
+      "expectations": [
+        "给出了Telegram隐私设置建议",
+        "推荐了至少3个俄语群组（语言交换、兴趣、expat各1+）",
+        "说明了如何加入群组的步骤",
+        "如果有user-profile.yaml则复用，而非重新创建"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "帮我在Telegram上找一个叫Katya的用户，她的handle是@katya_music",
+      "expected_output": "Agent 应使用playwright-cli在Telegram Web上搜索并导航到Katya的对话页面",
+      "files": [],
+      "expectations": [
+        "Agent 执行了 playwright-cli open Telegram Web",
+        "Agent 执行了搜索操作",
+        "Agent 导航到了 Katya 的对话页面",
+        "提供了后续操作指引（发送消息等）"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "我在Telegram上认识了一个俄罗斯女生，我们聊了几次，帮我做一个社交前模拟练习",
+      "expected_output": "Agent 应复用 VK Skill 的 AI Mirror 模拟逻辑，基于用户 profile 和目标女性档案进行模拟",
+      "files": [],
+      "expectations": [
+        "读取了已有的 user-profile.yaml",
+        "如果 Katya 档案存在则复用，不存在则创建",
+        "AI 扮演俄罗斯女性进行模拟对话",
+        "对话后给出反馈",
+        "更新了 Katya 的档案"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "我有VK的user-profile.yaml，Telegram能直接用吗？",
+      "expected_output": "Agent 应确认Telegram复用同一份user-profile.yaml，无需重新创建",
+      "files": [],
+      "expectations": [
+        "Agent 读取了 ~/.openvista/user-profile.yaml",
+        "确认了Telegram和VK共用同一份profile",
+        "如文件不存在，提示用户先创建profile"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "我想加入一个莫斯科的音乐爱好者群组，帮我找找",
+      "expected_output": "Agent 应使用playwright-cli在Telegram上搜索群组或给出群组发现方法",
+      "files": [],
+      "expectations": [
+        "给出了搜索群组的关键词建议（中文/俄语）",
+        "说明了通过 @指向群组的URL格式",
+        "演示了使用playwright-cli加入群组的步骤",
+        "提供了莫斯科音乐相关群组的示例"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "帮我在Telegram上给@katya_music发一条消息：'Привет! Ты слушаешь классическую музыку?'",
+      "expected_output": "Agent 应使用playwright-cli在Telegram Web上发送消息",
+      "files": [],
+      "expectations": [
+        "执行了 playwright-cli open Telegram Web",
+        "导航到了 Katya 的对话页面",
+        "输入了消息内容",
+        "发送了消息",
+        "截图确认"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Telegram的隐私设置怎么调？我不想让陌生人看到我的手机号",
+      "expected_output": "Agent 应给出Telegram隐私设置的具体指导",
+      "files": [],
+      "expectations": [
+        "说明了谁可以添加我为联系人的设置",
+        "说明了谁可以查看手机号的设置",
+        "说明了谁可以查看在线状态的设置",
+        "建议使用用户名而非手机号添加",
+        "给出了具体操作路径（Settings > Privacy & Security）"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "帮我在Telegram上关注一个叫@russian_expat的频道",
+      "expected_output": "Agent 应使用playwright-cli导航到频道并关注",
+      "files": [],
+      "expectations": [
+        "执行了 playwright-cli goto https://t.me/russian_expat",
+        "获取了页面快照",
+        "识别并点击了Join/Subscribe按钮",
+        "截图确认关注成功"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "我在Telegram认识了一个新女生Lena，handle是@Lena_ Moscow，帮我存档",
+      "expected_output": "Agent 应在 ~/.openvista/social/profiles/ 下为 Lena 创建档案（复用VK档案系统）",
+      "files": [],
+      "expectations": [
+        "创建了 ~/.openvista/social/profiles/Lena_ Moscow/ 目录",
+        "生成了 metadata.yaml（telegram_handle、first_contact等）",
+        "生成了 profile.md 人物描述",
+        "生成了 chat-history.md 聊天记录文件",
+        "复用 VK Skill 的档案格式"
+      ]
+    }
+  ]
+}
