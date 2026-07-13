@@ -4,3 +4,5 @@
 .opencode/
 _bmad/
 _bmad-output/
+.playwright
+skills-lock.json
