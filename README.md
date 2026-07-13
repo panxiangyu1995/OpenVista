@@ -166,24 +166,6 @@ OpenVista/
 
 ---
 
-## 开发阶段
-
-### Phase 1 - MVP（进行中）
-- [x] openvista-learn-foreign-language Skill
-- [x] openvista-social-vk Skill
-- [ ] TTS/STT 自部署流程
-
-### Phase 2 - 增强
-- [ ] 扩展 lesson 库
-- [ ] openvista-social-telegram Skill
-- [ ] SM-2 间隔重复、成就系统
-
-### Phase 3 - 开源发布
-- [ ] 完整文档和贡献指南
-- [ ] 社区支持
-
----
-
 ## License
 
 本项目采用 **MIT** 开源协议，你可以自由使用、修改、分发本项目的代码，包括用于商业目的。
