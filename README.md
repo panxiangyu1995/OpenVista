@@ -186,5 +186,5 @@ OpenVista/
 
 ## 联系方式与反馈
 
-- **邮箱**：panxiangyu@gmail.com
+- **邮箱**：panxiangyu1995@gmail.com
 - **问题反馈**：欢迎提交 [Issues](https://github.com/panxiangyu1995/OpenVista/issues)
